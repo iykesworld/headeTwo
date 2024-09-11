@@ -1,0 +1,113 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+:root{
+    --bg-clr: #faf9f9;
+    --text-clr: #000000;
+    --main-clr: #14213d;
+    --white-clr: #ffffff;
+    --shadow-clr: rgba(0,0,0,.2);
+    
+}
+.dark-mode{
+    --bg-clr: #000000;
+    --text-clr: #faf9f9;
+    --shadow-clr: rgba(0,0,0,.7);
+
+}
+html{
+    font-size: 67.2%;
+}
+body{
+    background-color: var(--bg-clr);
+    color: var(--text-clr);
+}
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 2rem 7%;
+    background-color: #fca311;
+    display: flex;
+    align-items: center;
+    z-index: 100;
+}
+.logo{
+    font-size: 2.5rem;
+    color: var(--main-clr);
+    font-weight: 600;
+    cursor: default;
+    margin-right: auto;
+}
+.navbar a{
+    font-size: 1.7rem;
+    color: var(--white-clr);
+    font-weight: 500;
+    margin-right: 3.5rem;
+    position: relative;
+}
+.navbar a.active::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 100%;
+    height: .2rem;
+    background-color: var(--main-clr);
+}
+#darkMode-icon{
+    cursor: pointer;
+    font-size: 20px;
+}
+#menu-icon{
+    display: none;
+}
+@media (max-width:799px) {
+    #mobile{
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+    }
+    #menu-icon{
+        display: contents;
+        font-size: 20px;
+    }
+    
+    .navbar{
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        padding: 1rem 3%;
+        background-color: var(--bg-clr);
+        border-top: .1rem solid rgba(0,0,0,.2);
+        box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+        display: none;
+    }
+    .navbar.active{
+        display: block;
+    }
+    
+    .navbar a{
+        display: block;
+        font-size: 2rem;
+        margin: 3rem 0;
+        color: var(--text-clr);
+    }
+    
+    .navbar a:nth-child(1),
+    .navbar a:nth-child(2){
+        color: var(--text-clr);
+    }
+    .navbar a.active{
+        color: var(--main-clr);
+    }
+    .navbar a.active::before{
+        width: 100px;
+    }
+
+}
